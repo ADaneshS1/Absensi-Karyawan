@@ -13,6 +13,7 @@ async function execute() {
         tanggal TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         jam_datang VARCHAR(5), 
         jam_pulang VARCHAR(5),
+        keterangan VARCHAR,
         hari INT,
         bulan INT,
         tahun INT

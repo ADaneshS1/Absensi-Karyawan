@@ -7,6 +7,7 @@ export default function Home() {
     event.preventDefault();
     const id_karyawan = event.target.id_karyawan.value;
     const jam_datang = event.target.jam_datang.value;
+    const keterangan = event.target.keterangan.value;
 
     fetch("/api/insertData", {
       method: "POST",
@@ -14,6 +15,7 @@ export default function Home() {
       body: JSON.stringify({
         id_karyawan: id_karyawan,
         jam_datang: jam_datang,
+        keterangan:keterangan
       }),
     })
       .then((res) => res.json())
@@ -42,6 +44,13 @@ export default function Home() {
             <input
               name="jam_datang"
               defaultValue={(new Date()).getHours() + ":" + String((new Date()).getMinutes()).padStart(2,"0")}
+            />
+          </div>
+          <div style={{ padding:"10px 0" }}>
+            <label style={{ padding:"0 5px" }}>Keterangan:</label>
+            <input
+              name="keterangan"
+              required
             />
           </div>
           <div className="flex gap-1" style={{ padding:"10px 0" }}>

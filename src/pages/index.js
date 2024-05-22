@@ -53,6 +53,7 @@ export default function Home() {
               {data.jam_datang}
               {" "}
               {data.jam_pulang}
+              {" "}
               {!data.jam_pulang && (
                   <button onClick={() => {
                     handleUpdate(data.id)
