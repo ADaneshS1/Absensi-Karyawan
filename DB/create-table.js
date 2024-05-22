@@ -12,7 +12,10 @@ async function execute() {
         id_karyawan VARCHAR(20) NOT NULL,
         tanggal TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
         jam_datang VARCHAR(5), 
-        jam_pulang VARCHAR(5)
+        jam_pulang VARCHAR(5),
+        hari INT,
+        bulan INT,
+        tahun INT
     )   
     `;
     console.log(createTable)
