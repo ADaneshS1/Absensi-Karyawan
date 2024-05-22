@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "PROTOTYPE API ",
     "collectionId": "5a6b9b38-5f49-4ada-a96e-4b1b716d2195",
-    "dateExported": "2024-05-22T06:49:56.959Z",
+    "dateExported": "2024-05-22T06:55:08.640Z",
     "version": "1.2",
     "folders": [],
     "requests": [
@@ -43,12 +43,19 @@
             "colId": "5a6b9b38-5f49-4ada-a96e-4b1b716d2195",
             "containerId": "",
             "name": "Update Data",
-            "url": "http://localhost:3000/api/updateData",
+            "url": "http://localhost:3000/api/updateData?id=1",
             "method": "PUT",
             "sortNum": 20000,
             "created": "2024-04-25T02:28:41.414Z",
-            "modified": "2024-05-22T06:30:11.692Z",
+            "modified": "2024-05-22T06:54:52.431Z",
             "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
             "body": {
                 "type": "json",
                 "raw": "{\n \"jam_pulang\":\"17.01\"\n}",
@@ -102,16 +109,16 @@
             "colId": "5a6b9b38-5f49-4ada-a96e-4b1b716d2195",
             "containerId": "",
             "name": "Get Data Detail",
-            "url": "http://localhost:3000/api/getDataDetail?id=2",
+            "url": "http://localhost:3000/api/getDataDetail?id=1",
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-04-25T02:23:49.168Z",
-            "modified": "2024-05-22T03:57:24.894Z",
+            "modified": "2024-05-22T06:54:40.431Z",
             "headers": [],
             "params": [
                 {
                     "name": "id",
-                    "value": "2",
+                    "value": "1",
                     "isPath": false
                 }
             ],
@@ -136,16 +143,16 @@
             "colId": "5a6b9b38-5f49-4ada-a96e-4b1b716d2195",
             "containerId": "",
             "name": "Del Data",
-            "url": "http://localhost:3000/api/delData?id=4",
+            "url": "http://localhost:3000/api/delData?id=1",
             "method": "DELETE",
             "sortNum": 40000,
             "created": "2024-04-25T02:25:34.072Z",
-            "modified": "2024-05-22T06:31:06.270Z",
+            "modified": "2024-05-22T06:55:02.383Z",
             "headers": [],
             "params": [
                 {
                     "name": "id",
-                    "value": "4",
+                    "value": "1",
                     "isPath": false
                 }
             ],
@@ -164,7 +171,19 @@
                     }
                 ]
             }
+        },
+        {
+            "_id": "8a36c00e-51dd-42c4-8f57-feb2bd0f1ac0",
+            "colId": "5a6b9b38-5f49-4ada-a96e-4b1b716d2195",
+            "containerId": "",
+            "name": "Get Today",
+            "url": "http://localhost:3000/api/getDataToday",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-05-22T06:52:18.700Z",
+            "modified": "2024-05-22T06:52:27.734Z",
+            "headers": []
         }
     ],
-    "ref": "s_LBA1zT1fgiDnUKdNIL06QT7DPDrU0JQNI0McXr5NSin1eDnVIwhaHWbf-IVTUzbhVcs9vJFei2qxsAt8VrXQ"
+    "ref": "s_LBA1zT1fgiDnUKdNIL0wObi-46quv8f_L4Jod201N5_6hlebCiDgqR9IVwzsZ7z5YDGx_VXr1LK-4Re4JjXQ"
 }
