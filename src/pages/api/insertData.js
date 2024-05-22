@@ -10,11 +10,11 @@ async function insertData(req,res) {
         const {id_karyawan,jam_datang,hari,bulan,tahun} = req.body
 
         if(!id_karyawan) {
-            return res.status(405).json({message:"Nama tidak boleh kosong"})
+            return res.status(400).json({message:"Nama tidak boleh kosong"})
         }
 
         if(!jam_datang) {
-            return res.status(405).json({message:"Jam datang tidak boleh kosong"})
+            return res.status(400).json({message:"Jam datang tidak boleh kosong"})
         }
 
           const rows = await sql` INSERT INTO absensi (id_karyawan,jam_datang,hari,bulan,tahun)

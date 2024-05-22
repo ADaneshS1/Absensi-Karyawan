@@ -28,22 +28,23 @@ export default function Home() {
 
   return (
     <div>
-     <form onSubmit={handleAdd} className="space-y-4">
-          <div>
-            <label>Nama:</label>
+      <h1>Absensi</h1>
+     <form onSubmit={handleAdd}>
+          <div style={{ padding:"10px 0" }}>
+            <label style={{ padding:"0 5px" }}>Nama:</label>
             <input
               name="id_karyawan"
               required
             />
           </div>
-          <div>
-            <label>Jam datang:</label>
+          <div style={{ padding:"10px 0" }}>
+            <label style={{ padding:"0 5px" }}>Jam datang:</label>
             <input
               name="jam_datang"
               defaultValue={(new Date()).getHours() + ":" + String((new Date()).getMinutes()).padStart(2,"0")}
             />
           </div>
-          <div className="flex gap-1">
+          <div className="flex gap-1" style={{ padding:"10px 0" }}>
             <button
               type="submit"
             >

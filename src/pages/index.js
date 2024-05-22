@@ -13,6 +13,27 @@ export default function Home() {
     })
   },[])
 
+  const handleUpdate = (id) => {
+    fetch(`/api/updateData?id=${id}`, {
+      method:"PUT",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+        jam_pulang: (new Date()).getHours() + ":" + String((new Date()).getMinutes()).padStart(2,"0")
+      })
+    })
+    .then((res) =>  res.json())
+    .then((data) => {
+      console.log(data.data)
+      alert("Sampai Jumpa")
+      router.reload()
+    })
+    .catch((err) => {
+      alert("Eror ", err.message)
+    })
+  }
+
   return (
     <div style={{ fontFamily:"monospace" }}>
       <h1>Absensi</h1>
@@ -32,16 +53,11 @@ export default function Home() {
               {data.jam_datang}
               {" "}
               {data.jam_pulang}
-              {/* {data.jam_datang / 1000}
-              {data.jam_datang / 100 % 10}
-              {":"}
-              {data.jam_datang / 10 % 100}
-              {data.jam_datang / 1 % 1000} */}
-              {/* {data.jam_pulang / 1000}
-              {data.jam_pulang / 100 % 10}
-              {":"}
-              {data.jam_pulang / 10 % 100}
-              {data.jam_pulang / 1 % 1000} */}
+              {!data.jam_pulang && (
+                  <button onClick={() => {
+                    handleUpdate(data.id)
+                  }}>Pulang</button>
+              )}
             </div>
           )
         })}
