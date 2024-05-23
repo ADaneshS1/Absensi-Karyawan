@@ -12,13 +12,26 @@ export default function Admin() {
         .then((data) => {
             let sortById = data.data
             sortById = sortById.sort((a,b) => a.id - b.id)
-            console.log(sortById)
             setShowAllData(sortById)
         })
         .catch((err) => {
             alert("Eror ", err.message)
         })
     }, [])
+
+    const handleDelete = (id) => {
+        fetch(`/api/delData?id=${id}`, {
+            method:"DELETE"
+        })
+        .then((res) => res.json())
+        .then(() => {
+            router.reload()
+        })
+        .catch((err) => {
+            alert("eror ", err.message)
+        })
+    }
+
     return(
         <div style={{ fontFamily:"monospace" }}>
             <h1>Portal Admin</h1>
@@ -44,9 +57,16 @@ export default function Admin() {
                         <button onClick={() => {
                             router.push(`/detail/${data.id}`)
                         }}>Detail</button>
+                        {" "}
                         <button onClick={() => {
                             router.push(`/edit/${data.id}`)
                         }}>Edit</button>
+                        {" "}
+                        <button onClick={() => {
+                            if(confirm("Yakin untuk dihapus ?")) {
+                                handleDelete(data.id)
+                            }
+                        }}>Delete</button>
                     </div>
                 )
             })}
