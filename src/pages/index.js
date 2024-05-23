@@ -9,7 +9,9 @@ export default function Home() {
     fetch(`/api/getData`)
     .then((res) => res.json())
     .then((data) => {
-      setShowAllData(data.data)
+      let sortById = data.data
+      sortById = sortById.sort((a,b) => a.id - b.id)
+      setShowAllData(sortById)
     })
   },[])
 
@@ -36,10 +38,10 @@ export default function Home() {
 
   return (
     <div style={{ fontFamily:"monospace" }}>
-      <h1>Absensi</h1>
+      <h1>Absensi Karyawan</h1>
       <button onClick={() => {
         router.push(`/add-data`)
-      }}>Add Data</button>
+      }}>Tambah Absensi</button>
       <div>
         {showAllData === null && <h1>Data Kosong</h1>}
         {showAllData === undefined && <h1>Loading....</h1>}
