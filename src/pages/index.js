@@ -6,7 +6,7 @@ export default function Home() {
   const [showAllData,setShowAllData] = useState()
 
   useEffect(() => {
-    fetch(`/api/getData`)
+    fetch(`/api/getDataToday`)
     .then((res) => res.json())
     .then((data) => {
       let sortById = data.data
