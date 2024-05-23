@@ -59,14 +59,7 @@ export default function Home() {
             >
               Add Data
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                router.push(`/`);
-              }}
-            >
-              Kembali
-            </button>
+            <button type="button" onClick={() => {router.push(`/`);}}>Kembali</button>
           </div>
         </form>
     </div>
