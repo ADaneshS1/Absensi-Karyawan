@@ -33,6 +33,8 @@ export default function DetailPage() {
                         {" "}
                         {data.jam_pulang}
                         {" "}
+                        {data.keterangan}
+                        {" "}
                         {data.hari}
                         {"/"}
                         {data.bulan}
